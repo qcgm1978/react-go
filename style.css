@@ -18,35 +18,54 @@
     box-sizing: border-box;
 }
 
-.intersection:before {
-    border-top: 2px #000 solid;
-    width: 40px;
-    display: block;
-    content: "";
-    top: 18px;
-    position: absolute;
-    z-index: -1;
-}
+    .intersection:before {
+        border-top: 2px #000 solid;
+        width: 40px;
+        display: block;
+        content: "";
+        top: 18px;
+        position: absolute;
+        z-index: -1;
+    }
 
-.intersection:after {
-    border-left: 2px #000 solid;
-    height: 40px;
-    display: block;
-    content: "";
-    left: 18px;
-    top: 0px;
-    position: absolute;
-    z-index: -1;
-}
+    .intersection:after {
+        border-left: 2px #000 solid;
+        height: 40px;
+        display: block;
+        content: "";
+        left: 18px;
+        top: 20px;
+        position: absolute;
+        z-index: -1;
+    }
 
-.intersection.black, .intersection.white {
-    border: 1px solid #000;
-}
+    .intersection.black, .intersection.white {
+        border: 1px solid #000;
+    }
 
-.intersection.black {
-    background-color: #444;
-}
+    .intersection.black {
+        background-color: #444;
+    }
 
-.intersection.white {
-    background-color: #eee;
-}
+    .intersection.white {
+        background-color: #eee;
+    }
+
+    .intersection:nth-of-type(19n)::before {
+        width: 20px;
+    }
+
+    .intersection:nth-of-type(19n+1)::before {
+        width: 20px;
+        position: relative;
+        left: 20px;
+    }
+
+    .intersection:nth-of-type(n+342)::after {
+        top: -20px;
+    }
+
+    .intersection:first-of-type:after {
+        top: 18px;
+        height: 42px;
+    }
